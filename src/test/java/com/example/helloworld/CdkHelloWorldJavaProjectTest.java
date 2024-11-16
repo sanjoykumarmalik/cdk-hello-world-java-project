@@ -1,4 +1,4 @@
-// package com.myorg;
+// package com.example.helloworld;
 
 // import software.amazon.awscdk.App;
 // import software.amazon.awscdk.assertions.Template;
@@ -24,3 +24,6 @@
 //         }});
 //     }
 // }
+//package com;
+
+

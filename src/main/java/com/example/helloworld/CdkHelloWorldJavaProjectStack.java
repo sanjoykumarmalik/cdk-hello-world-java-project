@@ -1,10 +1,10 @@
-package com.myorg;
+package com.example.helloworld;
 
 import software.constructs.Construct;
+import software.amazon.awscdk.Duration;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
-// import software.amazon.awscdk.Duration;
-// import software.amazon.awscdk.services.sqs.Queue;
+import software.amazon.awscdk.services.sqs.Queue;
 
 public class CdkHelloWorldJavaProjectStack extends Stack {
     public CdkHelloWorldJavaProjectStack(final Construct scope, final String id) {
@@ -15,10 +15,12 @@ public class CdkHelloWorldJavaProjectStack extends Stack {
         super(scope, id, props);
 
         // The code that defines your stack goes here
+        final Queue queue = Queue.Builder.create(this, "CdkHelloWorldJavaProjectQueue")
+                 .visibilityTimeout(Duration.seconds(180))
+                 .build();
 
-        // example resource
-        // final Queue queue = Queue.Builder.create(this, "CdkHelloWorldJavaProjectQueue")
-        //         .visibilityTimeout(Duration.seconds(300))
-        //         .build();
     }
 }
+
+
+
